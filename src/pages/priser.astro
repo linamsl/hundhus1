@@ -7,59 +7,72 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Priser för hunddagis på Hundhus1 i Täby. Heltid 3800 kr/månad, deltid från 3000 kr/månad. Öppet måndag–fredag."
   canonicalPath="/priser"
 >
-  <section class="section">
+  <section class="section" style="margin-top: var(--header-height);">
     <div class="container">
-      <h1 class="section-title">Priser – Hunddagis</h1>
+      <div class="section-header fade-up">
+        <span class="label">Hunddagis</span>
+        <h1>Priser</h1>
+        <p>Välj den dagisform som passar er och er hund bäst.</p>
+      </div>
 
-      <div class="price-table">
-        <div class="price-row header">
-          <span>Dagisform</span>
-          <span>Pris</span>
+      <div class="pricing-cards fade-up stagger">
+        <div class="pricing-card" style="--i: 0">
+          <h3>Deltid</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">2 dagar i veckan</p>
+          <div class="price">3 000<span style="font-size: 1rem; font-weight: 600;"> kr</span></div>
+          <div class="price-period">per månad</div>
+          <div class="price-detail">Två fasta dagar/vecka</div>
+          <div class="price-detail">Alla promenader inkluderade</div>
+          <a href="/kontakt" class="btn btn-ghost" style="margin-top: 1rem; width: 100%;">Anmäl intresse</a>
         </div>
-        <div class="price-row">
-          <span>Heltid (5 dagar/vecka)</span>
-          <span class="price-amount">3 800 kr/mån</span>
+
+        <div class="pricing-card popular" style="--i: 1">
+          <h3>Heltid</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">5 dagar i veckan</p>
+          <div class="price">3 800<span style="font-size: 1rem; font-weight: 600;"> kr</span></div>
+          <div class="price-period">per månad</div>
+          <div class="price-detail">Måndag till fredag</div>
+          <div class="price-detail">Alla promenader inkluderade</div>
+          <a href="/kontakt" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Anmäl intresse</a>
         </div>
-        <div class="price-row">
-          <span>Deltid (3 dagar/vecka)</span>
-          <span class="price-amount">3 300 kr/mån</span>
-        </div>
-        <div class="price-row">
-          <span>Deltid (2 dagar/vecka)</span>
-          <span class="price-amount">3 000 kr/mån</span>
+
+        <div class="pricing-card" style="--i: 2">
+          <h3>Deltid</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">3 dagar i veckan</p>
+          <div class="price">3 300<span style="font-size: 1rem; font-weight: 600;"> kr</span></div>
+          <div class="price-period">per månad</div>
+          <div class="price-detail">Tre fasta dagar/vecka</div>
+          <div class="price-detail">Alla promenader inkluderade</div>
+          <a href="/kontakt" class="btn btn-ghost" style="margin-top: 1rem; width: 100%;">Anmäl intresse</a>
         </div>
       </div>
 
-      <p class="price-note">Särskild taxa för valpar och unghundar under 2 år samt hundar över 55 cm.</p>
+      <p class="fade-up" style="text-align: center; margin-top: 1.5rem; color: var(--color-text-muted); font-size: 0.9rem; font-style: italic;">
+        Särskild taxa för valpar och unghundar under 2 år samt hundar över 55 cm.
+      </p>
 
-      <h2 class="section-title" style="margin-top: 3rem;">Öppettider</h2>
-
-      <div class="hours-grid">
-        <div class="hours-row">
-          <span>Måndag</span><span>07:00 – 18:00</span>
-        </div>
-        <div class="hours-row">
-          <span>Tisdag</span><span>07:00 – 18:00</span>
-        </div>
-        <div class="hours-row">
-          <span>Onsdag</span><span>07:00 – 18:00</span>
-        </div>
-        <div class="hours-row">
-          <span>Torsdag</span><span>07:00 – 18:00</span>
-        </div>
-        <div class="hours-row">
-          <span>Fredag</span><span>07:00 – 17:30</span>
-        </div>
-        <div class="hours-row">
-          <span>Lördag–Söndag</span><span>Stängt</span>
-        </div>
+      <!-- Opening hours -->
+      <div class="section-header fade-up" style="margin-top: clamp(3rem, 2rem + 3vw, 5rem);">
+        <span class="label">Öppettider</span>
+        <h2>Vi har öppet vardagar</h2>
       </div>
 
-      <p class="price-note">Semesterstängt: vecka 28–31 samt 7 dagar över jul/nyår.</p>
+      <div class="hours-grid fade-up">
+        <div class="hours-row"><span>Måndag</span><span>07:00 – 18:00</span></div>
+        <div class="hours-row"><span>Tisdag</span><span>07:00 – 18:00</span></div>
+        <div class="hours-row"><span>Onsdag</span><span>07:00 – 18:00</span></div>
+        <div class="hours-row"><span>Torsdag</span><span>07:00 – 18:00</span></div>
+        <div class="hours-row"><span>Fredag</span><span>07:00 – 17:30</span></div>
+        <div class="hours-row closed"><span>Lördag – Söndag</span><span>Stängt</span></div>
+      </div>
 
-      <div style="text-align: center; margin-top: 2.5rem;">
-        <p style="margin-bottom: 1rem; color: var(--color-text-light);">Företaget innehar F-skattsedel och är momsregistrerat.</p>
-        <a href="/kontakt" class="btn">Anmäl intresse</a>
+      <p class="fade-up" style="text-align: center; margin-top: 1.5rem; color: var(--color-text-muted); font-size: 0.9rem; font-style: italic;">
+        Semesterstängt: vecka 28–31 samt 7 dagar över jul/nyår.
+      </p>
+
+      <div class="fade-up" style="text-align: center; margin-top: 2.5rem;">
+        <p style="margin-bottom: 1rem; color: var(--color-text-light); font-size: 0.9rem;">Företaget innehar F-skattsedel och är momsregistrerat.</p>
+        <a href="/kontakt" class="btn btn-primary">Kontakta oss</a>
       </div>
     </div>
   </section>

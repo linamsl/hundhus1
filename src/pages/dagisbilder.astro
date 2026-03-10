@@ -9,15 +9,18 @@ const images = Array.from({ length: 20 }, (_, i) => i + 1);
   description="Se bilder från vardagen på Hundhus1 hunddagis i Täby Kyrkby. Glada hundar på promenad och lek."
   canonicalPath="/dagisbilder"
 >
-  <section class="section">
+  <section class="section" style="margin-top: var(--header-height);">
     <div class="container">
-      <h1 class="section-title">Dagisbilder</h1>
-      <p style="text-align: center; margin-bottom: 2rem; color: var(--color-text-light);">Bilder från vardagen på Hundhus1</p>
+      <div class="section-header fade-up">
+        <span class="label">Bilder</span>
+        <h1>Dagisbilder</h1>
+        <p>Bilder från vardagen på Hundhus1 — glada hundar på promenad, lek och vila.</p>
+      </div>
 
-      <div class="gallery-grid">
+      <div class="gallery-grid fade-up">
         {images.map(n => (
           <div class="gallery-item">
-            <img src={`/images/gallery/dog${n}.jpg`} alt={`Hunddagis bild ${n}`} width="500" height="500" loading="lazy" />
+            <img src={`/images/gallery/dog${n}.jpg`} alt={`Hund på Hundhus1 dagis bild ${n}`} width="500" height="500" loading="lazy" />
           </div>
         ))}
       </div>

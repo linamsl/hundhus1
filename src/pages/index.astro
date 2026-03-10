@@ -9,65 +9,148 @@ const slides = [1, 2, 3, 4, 5, 6, 7, 8];
   description="Hundhus1 är ett hunddagis i Täby Kyrkby med långa promenader, kurser och en trygg hundgrupp. Välkommen att anmäla ditt intresse!"
   canonicalPath=""
 >
+  <!-- Hero with slideshow -->
   <section class="hero">
     <div class="hero-slides" id="heroSlides">
       {slides.map((n, i) => (
         <div class={`hero-slide ${i === 0 ? 'active' : ''}`}>
-          <img src={`/images/slideshow/slide${n}.jpg`} alt={`Hundhus1 hunddagis bild ${n}`} loading={i === 0 ? 'eager' : 'lazy'} />
+          <img src={`/images/slideshow/slide${n}.jpg`} alt={`Hundar på Hundhus1 hunddagis i Täby ${n}`} loading={i === 0 ? 'eager' : 'lazy'} />
         </div>
       ))}
     </div>
     <div class="hero-overlay">
-      <div class="hero-text">
-        <h1>Välkommen till Hundhus1 i Täby</h1>
-        <p>Ett hunddagis i Täby Kyrkby</p>
+      <div class="hero-content">
+        <div class="hero-badge">&#128054; Hunddagis i Täby Kyrkby</div>
+        <h1>Där din hund trivs som bäst</h1>
+        <p>Långa promenader, trygg hundgrupp och massor av kärlek. Varje dag.</p>
+        <div class="hero-buttons">
+          <a href="/kontakt" class="btn btn-primary">Anmäl intresse</a>
+          <a href="/om-oss" class="btn btn-outline">Lär känna oss</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Wave divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 720,0 1440,40 L1440,80 L0,80 Z" fill="#FDF8F0"/>
+    </svg>
+  </div>
+
+  <!-- Features -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Hunddagis med hjärta</h2>
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-body">
-            <h3>Långa promenader</h3>
-            <p>Hundarna får två promenader per dag. En på 1,5–2 timmar och en på 30–60 minuter. Vi är flexibla och ser till varje hunds dagsform.</p>
-          </div>
+      <div class="section-header fade-up">
+        <span class="label">Varför Hundhus1?</span>
+        <h2>Hunddagis med hjärta</h2>
+        <p>Vi har skapat en trygg plats där hundar får vara hundar — med långa utevistelser och lugn gemenskap.</p>
+      </div>
+
+      <div class="features-grid stagger">
+        <div class="feature-card fade-up" style="--i: 0">
+          <div class="feature-icon">&#128694;</div>
+          <h3>Långa promenader</h3>
+          <p>Två promenader per dag — en på 1,5–2 timmar och en på 30–60 minuter. Vi anpassar efter varje hunds dagsform.</p>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>Trygg hundgrupp</h3>
-            <p>Vi lägger stor vikt på balansen i hundgruppen. Det måste vara lugnt och ingen stress eller aggression får förekomma.</p>
-          </div>
+        <div class="feature-card fade-up" style="--i: 1">
+          <div class="feature-icon">&#129294;</div>
+          <h3>Trygg hundgrupp</h3>
+          <p>Vi lägger stor vikt på balansen i hundgruppen. Det måste vara lugnt — ingen stress eller aggression får förekomma.</p>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>Mysiga stallboxar</h3>
-            <p>På dagiset har vi stora stallboxar där hundarna är tillsammans och myser. En trygg och hemtrevlig miljö.</p>
-          </div>
+        <div class="feature-card fade-up" style="--i: 2">
+          <div class="feature-icon">&#127968;</div>
+          <h3>Mysiga stallboxar</h3>
+          <p>Stora stallboxar där hundarna vilar tillsammans efter promenaderna. En trygg och hemtrevlig miljö.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- A day at Hundhus1 -->
   <section class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Kurser</h2>
-      <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">Vi erbjuder hundkurser i Täby – allt från valpkurs till apportering och nosework.</p>
-      <div style="text-align: center;">
-        <a href="/kurser" class="btn">Se alla kurser</a>
+      <div class="section-header fade-up">
+        <span class="label">En dag hos oss</span>
+        <h2>Så ser en typisk dag ut</h2>
+      </div>
+
+      <div class="timeline fade-up">
+        <div class="timeline-item">
+          <div class="timeline-time">07:00 – 09:00</div>
+          <h3>Lämning</h3>
+          <p>Hundarna anländer och hälsar på kompisarna. Vi kollar dagsform och stämning.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">09:00 – 11:00</div>
+          <h3>Lång promenad</h3>
+          <p>Dagens stora utflykt — 1,5 till 2 timmar i skog och natur runt Täby Kyrkby.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">11:00 – 13:00</div>
+          <h3>Vila och mys</h3>
+          <p>Hundarna vilar i stallboxarna och laddar om efter promenaden.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">13:00 – 14:00</div>
+          <h3>Kortare promenad</h3>
+          <p>En lugnare eftermiddagspromenad på 30–60 minuter.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">14:00 – 18:00</div>
+          <h3>Lek och hämtning</h3>
+          <p>Fri lek och avslappning. Hundägare hämtar sina fyrbenta vänner.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- Courses teaser -->
+  <section class="section section-green">
     <div class="container" style="text-align: center;">
-      <h2 class="section-title">Kontakta oss</h2>
-      <p style="max-width: 600px; margin: 0 auto 1.5rem;">
-        Katarina Matisic-Lundqvist &amp; Marie Lind önskar er välkomna! Anmäl ert dagisintresse eller kursintresse via vårt kontaktformulär.
-      </p>
-      <a href="/kontakt" class="btn">Kontakta oss</a>
+      <div class="section-header fade-up">
+        <span class="label" style="color: var(--color-primary-light);">Hundkurser i Täby</span>
+        <h2>Utvecklas tillsammans med din hund</h2>
+        <p style="color: rgba(255,255,255,0.75);">Valpkurs, lydnad, nose work, apportering och mycket mer. Vi erbjuder kurser för alla nivåer och raser.</p>
+      </div>
+      <div class="fade-up">
+        <a href="/kurser" class="btn btn-primary" style="margin-right: 0.5rem;">Se alla kurser</a>
+        <a href="/priser" class="btn btn-outline">Visa priser</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery teaser -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="label">Dagisbilder</span>
+        <h2>Glada hundar i vardagen</h2>
+      </div>
+      <div class="gallery-grid fade-up">
+        {[1,3,5,7,9,11].map(n => (
+          <div class="gallery-item">
+            <img src={`/images/gallery/dog${n}.jpg`} alt={`Hund på Hundhus1 dagis ${n}`} width="500" height="500" loading="lazy" />
+          </div>
+        ))}
+      </div>
+      <div style="text-align: center; margin-top: 2rem;" class="fade-up">
+        <a href="/dagisbilder" class="btn btn-ghost">Se alla bilder</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-alt">
+    <div class="container" style="text-align: center;">
+      <div class="section-header fade-up">
+        <span class="label">Välkommen</span>
+        <h2>Anmäl ert dagisintresse</h2>
+        <p>Katarina &amp; Marie önskar er välkomna! Kontakta oss för att boka en prova-på-dag eller anmäla intresse.</p>
+      </div>
+      <div class="fade-up">
+        <a href="/kontakt" class="btn btn-primary">Kontakta oss</a>
+      </div>
     </div>
   </section>
 
@@ -78,6 +161,6 @@ const slides = [1, 2, 3, 4, 5, 6, 7, 8];
       slides[current]?.classList.remove('active');
       current = (current + 1) % slides.length;
       slides[current]?.classList.add('active');
-    }, 4000);
+    }, 5000);
   </script>
 </BaseLayout>

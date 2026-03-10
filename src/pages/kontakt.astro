@@ -7,64 +7,69 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Kontakta Hundhus1 hunddagis i Täby Kyrkby. Adress: Holmgårdsvägen 5, 187 74 Täby. Tel: 070-777 42 48."
   canonicalPath="/kontakt"
 >
-  <section class="section">
+  <section class="section" style="margin-top: var(--header-height);">
     <div class="container">
-      <h1 class="section-title">Kontakt</h1>
+      <div class="section-header fade-up">
+        <span class="label">Kontakt</span>
+        <h1>Hör av dig</h1>
+        <p>Fyll i formuläret eller ring oss direkt. Vi svarar så snart vi kan!</p>
+      </div>
 
       <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Anela konsults Hundhus1 i Täby AB</h3>
-
-          <div class="contact-detail">
-            <span class="icon">&#128205;</span>
-            <div>
-              <strong>Adress</strong><br>
-              Holmgårdsvägen 5<br>
-              187 74 Täby
+        <div class="contact-info fade-up">
+          <div class="contact-card">
+            <div class="contact-card-icon">&#128205;</div>
+            <div class="contact-card-content">
+              <strong>Adress</strong>
+              <span>Holmgårdsvägen 5, 187 74 Täby</span>
             </div>
           </div>
 
-          <div class="contact-detail">
-            <span class="icon">&#128222;</span>
-            <div>
-              <strong>Telefon</strong><br>
+          <div class="contact-card">
+            <div class="contact-card-icon">&#9742;</div>
+            <div class="contact-card-content">
+              <strong>Telefon</strong>
               <a href="tel:+46707774248">070-777 42 48</a>
             </div>
           </div>
 
-          <div class="contact-detail">
-            <span class="icon">&#9993;</span>
-            <div>
-              <strong>E-post</strong><br>
+          <div class="contact-card">
+            <div class="contact-card-icon">&#9993;</div>
+            <div class="contact-card-content">
+              <strong>E-post</strong>
               <a href="mailto:info@hundhus1.se">info@hundhus1.se</a>
             </div>
           </div>
 
-          <h3 style="margin-top: 2rem;">Personalen</h3>
+          <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Personalen</h3>
 
-          <div class="contact-detail">
-            <div>
-              <strong>Marie Lind</strong><br>
-              Tel: <a href="tel:+46733960607">0733-96 06 07</a><br>
-              Mail: <a href="mailto:marie.lind@hundhus1.se">marie.lind@hundhus1.se</a>
+          <div class="contact-card">
+            <div class="contact-card-icon" style="background: var(--color-accent-soft); font-size: 0.9rem; font-weight: 700; font-family: var(--font-heading);">ML</div>
+            <div class="contact-card-content">
+              <strong>Marie Lind</strong>
+              <a href="tel:+46733960607">0733-96 06 07</a><br>
+              <a href="mailto:marie.lind@hundhus1.se" style="font-size: 0.9rem;">marie.lind@hundhus1.se</a>
             </div>
           </div>
 
-          <div class="contact-detail">
-            <div>
-              <strong>Katarina Matisic-Lundqvist</strong><br>
-              Tel: <a href="tel:+46707774248">070-777 42 48</a><br>
-              Mail: <a href="mailto:katarina.matisic@hundhus1.se">katarina.matisic@hundhus1.se</a>
+          <div class="contact-card">
+            <div class="contact-card-icon" style="background: var(--color-accent-soft); font-size: 0.9rem; font-weight: 700; font-family: var(--font-heading);">KM</div>
+            <div class="contact-card-content">
+              <strong>Katarina Matisic-Lundqvist</strong>
+              <a href="tel:+46707774248">070-777 42 48</a><br>
+              <a href="mailto:katarina.matisic@hundhus1.se" style="font-size: 0.9rem;">katarina.matisic@hundhus1.se</a>
             </div>
           </div>
         </div>
 
-        <div>
+        <div class="fade-up">
           <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="kontakt" />
             <p style="display:none;">
               <label>Fyll inte i detta: <input name="bot-field" /></label>
             </p>
+
+            <h3>Skicka meddelande</h3>
 
             <div class="form-group">
               <label for="name">Namn</label>
@@ -86,12 +91,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <textarea id="message" name="message" required placeholder="Beskriv er hund och vad ni är intresserade av (dagis/kurs)."></textarea>
             </div>
 
-            <button type="submit" class="btn">Skicka</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Skicka meddelande</button>
           </form>
         </div>
       </div>
 
-      <div class="map-container">
+      <div class="map-container fade-up">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2025.7!2d18.0686!3d59.4738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9a0000000001%3A0x0!2sHolmg%C3%A5rdsv%C3%A4gen+5%2C+187+74+T%C3%A4by!5e0!3m2!1ssv!2sse!4v1"
           allowfullscreen=""

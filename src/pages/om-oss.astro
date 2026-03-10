@@ -7,49 +7,75 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Möt teamet bakom Hundhus1 hunddagis i Täby Kyrkby. Katarina, Marie och våra dedikerade medarbetare tar hand om din hund."
   canonicalPath="/om-oss"
 >
-  <section class="section">
+  <section class="section" style="margin-top: var(--header-height);">
     <div class="container">
-      <h1 class="section-title">Om oss</h1>
+      <div class="section-header fade-up">
+        <span class="label">Möt teamet</span>
+        <h1>Om oss</h1>
+        <p>Vi är ett gäng hundälskare som brinner för att ge era hundar den bästa vardagen.</p>
+      </div>
 
-      <div class="staff-grid">
+      <!-- Owners -->
+      <div class="staff-grid fade-up">
         <div class="staff-card">
-          <img src="/images/staff/katarina.jpg" alt="Katarina Matisic-Lundqvist, ägare av Hundhus1" width="180" height="180" loading="lazy" />
-          <h3>Katarina Matisic-Lundqvist</h3>
-          <p class="course-tag" style="margin-bottom: 1rem;">Ägare</p>
-          <p>Jag driver hunddagiset tillsammans med Marie. Jag bor i Vallentuna med min man och två döttrar. Vi har två labradorer, Lava och Ipa.</p>
-          <p style="margin-top: 0.8rem;">Jag är utbildad hundinstruktör och har haft egen hund sedan jag var 14 år. Jag har jobbat med hund inom lydnad, agility, spår och jakt. Idag ligger jaktträningen mig varmast.</p>
+          <div class="staff-card-photo">
+            <img src="/images/staff/katarina.jpg" alt="Katarina Matisic-Lundqvist, ägare av Hundhus1" loading="lazy" />
+          </div>
+          <div class="staff-card-body">
+            <span class="staff-role">Ägare &amp; Hundinstruktör</span>
+            <h3>Katarina Matisic-Lundqvist</h3>
+            <p>Driver hunddagiset tillsammans med Marie. Bor i Vallentuna med man, två döttrar och labradorerna Lava och Ipa. Utbildad hundinstruktör med erfarenhet inom lydnad, agility, spår och jakt sedan 14 års ålder.</p>
+          </div>
         </div>
 
         <div class="staff-card">
-          <img src="/images/staff/marie.png" alt="Marie Lind, ägare av Hundhus1" width="180" height="180" loading="lazy" />
-          <h3>Marie Lind</h3>
-          <p class="course-tag" style="margin-bottom: 1rem;">Ägare</p>
-          <p>Jag driver Hundhus1 tillsammans med Katarina. Jag bor i Vallentuna med man och barn. Min första hund var en boxer som hette Alfons – honom lärde jag mig massor av!</p>
-          <p style="margin-top: 0.8rem;">Jag har en jaktgolden som heter Minus och fyra jaktlabradorer: Plus, Lakris, Dumle och Mango. Jag är utbildad hundinstruktör och spenderar gärna fritiden i skogen med jaktträning.</p>
+          <div class="staff-card-photo">
+            <img src="/images/staff/marie.png" alt="Marie Lind, ägare av Hundhus1" loading="lazy" />
+          </div>
+          <div class="staff-card-body">
+            <span class="staff-role">Ägare &amp; Hundinstruktör</span>
+            <h3>Marie Lind</h3>
+            <p>Driver Hundhus1 tillsammans med Katarina. Bor i Vallentuna med man och barn. Utbildad hundinstruktör med jaktgolden Minus och fyra jaktlabradorer: Plus, Lakris, Dumle och Mango.</p>
+          </div>
         </div>
       </div>
 
-      <div class="staff-grid" style="margin-top: 2rem;">
-        <div class="staff-card">
-          <h3>Tessan</h3>
-          <p>Har jobbat på Hundhus1 sedan det öppnade. Har två pudlar, Pärla och Chewie.</p>
+      <!-- Rest of team -->
+      <div class="staff-mini-grid fade-up" style="margin-top: 2rem;">
+        <div class="staff-mini-card">
+          <div class="staff-mini-avatar">T</div>
+          <div>
+            <h3>Tessan</h3>
+            <p>Med sedan start. Har två pudlar — Pärla och Chewie.</p>
+          </div>
         </div>
-        <div class="staff-card">
-          <h3>Vonne</h3>
-          <p>Började jobba här strax efter öppningen. Har en bearded collie som heter Sixten.</p>
+        <div class="staff-mini-card">
+          <div class="staff-mini-avatar">V</div>
+          <div>
+            <h3>Vonne</h3>
+            <p>Började strax efter öppningen. Har en bearded collie, Sixten.</p>
+          </div>
         </div>
-        <div class="staff-card">
-          <h3>Erika</h3>
-          <p>Har jobbat på Hundhus1 i 8 år. Har en liten bichon havanais som heter Elsa.</p>
+        <div class="staff-mini-card">
+          <div class="staff-mini-avatar">E</div>
+          <div>
+            <h3>Erika</h3>
+            <p>Jobbat här i 8 år. Har en bichon havanais som heter Elsa.</p>
+          </div>
         </div>
-        <div class="staff-card">
-          <h3>Lina</h3>
-          <p>Nyast i gänget och har hand om det administrativa. Har tre hundar: Frans (chihuahua), Stitch och Solo.</p>
+        <div class="staff-mini-card">
+          <div class="staff-mini-avatar">L</div>
+          <div>
+            <h3>Lina</h3>
+            <p>Nyast i gänget, ansvarar för det administrativa. Tre hundar: Frans, Stitch och Solo.</p>
+          </div>
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-        <p>Det vi lägger störst fokus på, och kontinuerligt vidareutbildar oss inom, är samspelet hundar emellan samt mellan människa och hund.</p>
+      <!-- Mission statement -->
+      <div class="fade-up" style="text-align: center; margin-top: 3.5rem; max-width: 640px; margin-left: auto; margin-right: auto; padding: 2rem; background: var(--color-bg-alt); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+        <h3 style="margin-bottom: 0.6rem;">Vårt fokus</h3>
+        <p style="color: var(--color-text-light);">Det vi lägger störst fokus på, och kontinuerligt vidareutbildar oss inom, är samspelet hundar emellan samt mellan människa och hund.</p>
       </div>
     </div>
   </section>

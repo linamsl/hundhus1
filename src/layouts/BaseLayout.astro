@@ -19,6 +19,10 @@ const canonicalUrl = `https://www.hundhus1.se${canonicalPath}`;
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href={canonicalUrl} />
 
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <!-- Open Graph -->
   <meta property="og:locale" content="sv_SE" />
   <meta property="og:type" content="website" />
@@ -65,22 +69,23 @@ const canonicalUrl = `https://www.hundhus1.se${canonicalPath}`;
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <div class="header-inner">
       <a href="/" class="logo">
-        <img src="/images/logo.png" alt="Hundhus1 logotyp" width="60" height="60" />
+        <img src="/images/logo.png" alt="Hundhus1 logotyp" width="48" height="48" />
+        <span class="logo-text">Hundhus1</span>
       </a>
       <button class="nav-toggle" aria-label="Öppna meny" id="navToggle">
         <span></span><span></span><span></span>
       </button>
       <nav class="main-nav" id="mainNav">
         <ul>
-          <li><a href="/" class={Astro.url.pathname === '/' ? 'active' : ''}>Välkommen</a></li>
+          <li><a href="/" class={Astro.url.pathname === '/' ? 'active' : ''}>Hem</a></li>
           <li><a href="/om-oss" class={Astro.url.pathname === '/om-oss/' ? 'active' : ''}>Om oss</a></li>
           <li><a href="/priser" class={Astro.url.pathname === '/priser/' ? 'active' : ''}>Priser</a></li>
           <li><a href="/kurser" class={Astro.url.pathname === '/kurser/' ? 'active' : ''}>Kurser</a></li>
           <li><a href="/dagisbilder" class={Astro.url.pathname === '/dagisbilder/' ? 'active' : ''}>Dagisbilder</a></li>
-          <li><a href="/kontakt" class={Astro.url.pathname === '/kontakt/' ? 'active' : ''}>Kontakt</a></li>
+          <li><a href="/kontakt" class="header-cta">Kontakt</a></li>
         </ul>
       </nav>
     </div>
@@ -90,12 +95,19 @@ const canonicalUrl = `https://www.hundhus1.se${canonicalPath}`;
     <slot />
   </main>
 
+  <!-- Floating phone CTA -->
+  <div class="floating-cta">
+    <a href="tel:+46707774248" class="floating-btn floating-phone" aria-label="Ring oss">
+      &#9742;
+    </a>
+  </div>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <h4>Hundhus1</h4>
-          <p>Hunddagis i Täby Kyrkby med fokus på långa promenader, balans i hundgruppen och trygghet.</p>
+          <h4>Hundhus1 i Täby</h4>
+          <p>Hunddagis i Täby Kyrkby med fokus på långa promenader, balans i hundgruppen och trygghet. Vi erbjuder även hundkurser för alla nivåer.</p>
         </div>
         <div class="footer-col">
           <h4>Sidor</h4>
@@ -106,22 +118,56 @@ const canonicalUrl = `https://www.hundhus1.se${canonicalPath}`;
           <a href="/kontakt">Kontakt</a>
         </div>
         <div class="footer-col">
-          <h4>Kontakt</h4>
+          <h4>Kontakta oss</h4>
           <p>Holmgårdsvägen 5<br>187 74 Täby</p>
-          <p style="margin-top: 0.5rem;">Tel: <a href="tel:+46707774248">070-777 42 48</a></p>
-          <p>E-post: <a href="mailto:info@hundhus1.se">info@hundhus1.se</a></p>
+          <p style="margin-top: 0.6rem;">
+            <a href="tel:+46707774248">070-777 42 48</a><br>
+            <a href="mailto:info@hundhus1.se">info@hundhus1.se</a>
+          </p>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Anela konsults Hundhus1 i Täby AB. Alla rättigheter förbehållna.</p>
+        <p>&copy; {new Date().getFullYear()} Hundhus1 i Täby. Alla rättigheter förbehållna.</p>
       </div>
     </div>
   </footer>
 
   <script>
+    // Mobile nav toggle with animation
     const toggle = document.getElementById('navToggle');
     const nav = document.getElementById('mainNav');
-    toggle?.addEventListener('click', () => nav?.classList.toggle('open'));
+    toggle?.addEventListener('click', () => {
+      nav?.classList.toggle('open');
+      toggle.classList.toggle('open');
+    });
+
+    // Close nav on link click (mobile)
+    nav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle?.classList.remove('open');
+      });
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('siteHeader');
+    const onScroll = () => {
+      header?.classList.toggle('scrolled', window.scrollY > 20);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Scroll-triggered fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
