@@ -157,6 +157,27 @@ const canonicalUrl = `https://www.hundhus1.se${canonicalPath}`;
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
+    // Gallery hover animation swap
+    const animCache = new Set();
+    document.querySelectorAll('.gallery-animated').forEach(item => {
+      const img = item.querySelector('img');
+      if (!img) return;
+      const staticSrc = item.getAttribute('data-static');
+      const animSrc = item.getAttribute('data-animated');
+      if (!staticSrc || !animSrc) return;
+
+      item.addEventListener('mouseenter', () => {
+        if (animCache.has(animSrc)) {
+          img.src = animSrc;
+        } else {
+          const preload = new Image();
+          preload.onload = () => { animCache.add(animSrc); img.src = animSrc; };
+          preload.src = animSrc;
+        }
+      });
+      item.addEventListener('mouseleave', () => { img.src = staticSrc; });
+    });
+
     // Scroll-triggered fade-in animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

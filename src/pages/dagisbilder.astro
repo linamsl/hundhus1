@@ -14,16 +14,19 @@ const images = Array.from({ length: 20 }, (_, i) => i + 1);
       <div class="section-header fade-up">
         <span class="label">Bilder</span>
         <h1>Dagisbilder</h1>
-        <p>Bilder från vardagen på Hundhus1 — glada hundar på promenad, lek och vila.</p>
+        <p>Bilder från vardagen på Hundhus1 — håll musen över bilderna för att se hundarna komma till liv!</p>
       </div>
 
-      <div class="gallery-grid fade-up">
+      <div class="gallery-grid fade-up" style="grid-template-columns: repeat(4, 1fr);">
         {images.map(n => (
-          <div class="gallery-item">
+          <div class="gallery-item gallery-animated"
+               data-static={`/images/gallery/dog${n}.jpg`}
+               data-animated={`/images/gallery-animated/dog${n}.webp`}>
             <img src={`/images/gallery/dog${n}.jpg`} alt={`Hund på Hundhus1 dagis bild ${n}`} width="500" height="500" loading="lazy" />
           </div>
         ))}
       </div>
     </div>
   </section>
+
 </BaseLayout>
