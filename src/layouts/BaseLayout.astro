@@ -166,16 +166,14 @@ const canonicalUrl = `https://www.hundhus1.se${canonicalPath}`;
       const animSrc = item.getAttribute('data-animated');
       if (!staticSrc || !animSrc) return;
 
-      item.addEventListener('mouseenter', () => {
-        if (animCache.has(animSrc)) {
-          img.src = animSrc;
-        } else {
-          const preload = new Image();
-          preload.onload = () => { animCache.add(animSrc); img.src = animSrc; };
-          preload.src = animSrc;
-        }
-      });
-      item.addEventListener('mouseleave', () => { img.src = staticSrc; });
+      const swapSrc = (src) => {
+        img.style.opacity = '0.6';
+        const doSwap = () => { img.src = src; img.style.opacity = '1'; };
+        if (animCache.has(src)) { doSwap(); }
+        else { const p = new Image(); p.onload = () => { animCache.add(src); doSwap(); }; p.src = src; }
+      };
+      item.addEventListener('mouseenter', () => swapSrc(animSrc));
+      item.addEventListener('mouseleave', () => { img.src = staticSrc; img.style.opacity = '1'; });
     });
 
     // Scroll-triggered fade-in animations
