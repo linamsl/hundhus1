@@ -64,6 +64,15 @@ const canonicalUrl = `https://www.hundhus1.se${canonicalPath}`;
 
   <link rel="sitemap" href="/sitemap-index.xml" />
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-64TKP90MMX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-64TKP90MMX');
+  </script>
+
   <style is:global>
     @import '../styles/global.css';
   </style>
