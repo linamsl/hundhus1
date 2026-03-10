@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const courses = [
+  {
+    title: "Valpkurs",
+    description: "En mycket uppskattad valpkurs för dig som vill skapa en trygg relation och balans med din hund. Fokus ligger på att er nya familjemedlem ska kunna hitta eget lugn och förstå hur den ska bete sig i vardagliga situationer. Kursen utbildar dig som hundägare så att du förstår din hund, och hur du får den att förstå dig.",
+    tag: "Populär"
+  },
+  {
+    title: "Fortsättning / Unghund",
+    description: "För dig som gått valp- eller grundkurs. Fokus ligger fortfarande på ledarskap, passivitet och hundspråk men nu lägger vi till promenader, hundmöten och de utmaningar man möts av med en unghund.",
+    tag: "Anmäl intresse"
+  },
+  {
+    title: "Promenadkurs",
+    description: "Fokus på att få era hundar att fungera med andra hundar i grupp, ta det lugnt och passivitet samt kunna gå promenad i grupp.",
+    tag: "Datum släppta"
+  },
+  {
+    title: "Apportering",
+    description: "Denna kurs vänder sig till dig som vill kunna starta på ett WT. Här lär du dig grunderna i apportering och vad som förväntas av dig för att kunna starta på ett prov. Skott kommer att förekomma. Krav: Hunden ska kunna komma på inkallning och ha ett föremålsintresse.",
+    tag: "Ny kurs"
+  },
+  {
+    title: "Nose Work",
+    description: "En kurs som passar alla raser oavsett ålder. I Nose Work får hunden en bra mental stimulans. Här jobbar hunden med nosen och vi som förare lär oss läsa våra hundar.",
+    tag: "Anmäl intresse"
+  },
+  {
+    title: "Spår och sök",
+    description: "För dig som vill pröva på spår och sök med din hund — här lär du dig grunderna. Det är 3 tillfällen (17:00–20:00) och vi håller till utomhus.",
+    tag: "Anmäl intresse"
+  },
+  {
+    title: "Klickerkurs",
+    description: "En kurs för dig som vill bli bättre på att träna med positiv förstärkning och belöna önskat beteende. En helgkurs där du lär dig att lära. Ett perfekt verktyg för att tajma in och förstärka ett beteende i rätt sekund.",
+    tag: "Anmäl intresse"
+  },
+  {
+    title: "Barn med hund",
+    description: "En rolig kurs där ert barn kan komma och gå en egen kurs med sin hund. Vi prövar på olika aktiviteter blandat med lite skogspromenad och fika.",
+    tag: "Anmäl intresse"
+  },
+  {
+    title: "Öppen träning",
+    description: "Vi har olika teman vid varje träff med fokus på vardagliga situationer. Föranmälan krävs.",
+    tag: "Löpande"
+  },
+  {
+    title: "Privatträning",
+    description: "För dig med specifika önskemål eller problem. Boka direkt via kontaktformuläret.",
+    tag: "På begäran"
+  }
+];
+---
+
+<BaseLayout
+  title="Hundkurser i Täby – Hundhus1"
+  description="Hundkurser i Täby: valpkurs, lydnadskurs, nose work, apportering, klickerkurs och mer. Anmäl ditt intresse till Hundhus1."
+  canonicalPath="/kurser"
+>
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Kurser</h1>
+
+      <div class="card-grid">
+        {courses.map(course => (
+          <div class="course-card">
+            <span class="course-tag">{course.tag}</span>
+            <h3 style="margin-top: 0.8rem;">{course.title}</h3>
+            <p>{course.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div style="margin-top: 3rem; text-align: center;">
+        <p style="margin-bottom: 0.5rem; font-weight: 600;">Anmäl ert kursintresse via kontaktformuläret.</p>
+        <p style="margin-bottom: 1.5rem; color: var(--color-text-light);">Kom ihåg att skriva vilken kurs ni är intresserade av.</p>
+        <a href="/kontakt" class="btn">Anmäl intresse</a>
+      </div>
+
+      <div style="margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; padding: 1.5rem; background: var(--color-bg-alt); border-radius: 12px;">
+        <h3>Kurspolicy</h3>
+        <ul style="list-style: disc; padding-left: 1.5rem; margin-top: 0.8rem; color: var(--color-text-light); font-size: 0.9rem;">
+          <li>Kurs kan komma att ställas in om färre än hälften av platserna är fyllda.</li>
+          <li>Vid avbokning innan kursstart återbetalas avgiften vid uppvisande av läkar-/veterinärintyg.</li>
+          <li>Vid inställd kurs återbetalas hela kursavgiften.</li>
+          <li>Vid enstaka missade kurstillfällen återbetalas inte någon del av kursavgiften.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

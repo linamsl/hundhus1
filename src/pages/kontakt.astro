@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Kontakt – Hundhus1 hunddagis i Täby"
+  description="Kontakta Hundhus1 hunddagis i Täby Kyrkby. Adress: Holmgårdsvägen 5, 187 74 Täby. Tel: 070-777 42 48."
+  canonicalPath="/kontakt"
+>
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Kontakt</h1>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Anela konsults Hundhus1 i Täby AB</h3>
+
+          <div class="contact-detail">
+            <span class="icon">&#128205;</span>
+            <div>
+              <strong>Adress</strong><br>
+              Holmgårdsvägen 5<br>
+              187 74 Täby
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <span class="icon">&#128222;</span>
+            <div>
+              <strong>Telefon</strong><br>
+              <a href="tel:+46707774248">070-777 42 48</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <span class="icon">&#9993;</span>
+            <div>
+              <strong>E-post</strong><br>
+              <a href="mailto:info@hundhus1.se">info@hundhus1.se</a>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 2rem;">Personalen</h3>
+
+          <div class="contact-detail">
+            <div>
+              <strong>Marie Lind</strong><br>
+              Tel: <a href="tel:+46733960607">0733-96 06 07</a><br>
+              Mail: <a href="mailto:marie.lind@hundhus1.se">marie.lind@hundhus1.se</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div>
+              <strong>Katarina Matisic-Lundqvist</strong><br>
+              Tel: <a href="tel:+46707774248">070-777 42 48</a><br>
+              Mail: <a href="mailto:katarina.matisic@hundhus1.se">katarina.matisic@hundhus1.se</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="kontakt" />
+            <p style="display:none;">
+              <label>Fyll inte i detta: <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-group">
+              <label for="name">Namn</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-post</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Meddelande</label>
+              <textarea id="message" name="message" required placeholder="Beskriv er hund och vad ni är intresserade av (dagis/kurs)."></textarea>
+            </div>
+
+            <button type="submit" class="btn">Skicka</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2025.7!2d18.0686!3d59.4738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9a0000000001%3A0x0!2sHolmg%C3%A5rdsv%C3%A4gen+5%2C+187+74+T%C3%A4by!5e0!3m2!1ssv!2sse!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Karta till Hundhus1 i Täby"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

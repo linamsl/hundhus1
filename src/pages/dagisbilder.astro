@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const images = Array.from({ length: 20 }, (_, i) => i + 1);
+---
+
+<BaseLayout
+  title="Dagisbilder – Hundhus1 i Täby"
+  description="Se bilder från vardagen på Hundhus1 hunddagis i Täby Kyrkby. Glada hundar på promenad och lek."
+  canonicalPath="/dagisbilder"
+>
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Dagisbilder</h1>
+      <p style="text-align: center; margin-bottom: 2rem; color: var(--color-text-light);">Bilder från vardagen på Hundhus1</p>
+
+      <div class="gallery-grid">
+        {images.map(n => (
+          <div class="gallery-item">
+            <img src={`/images/gallery/dog${n}.jpg`} alt={`Hunddagis bild ${n}`} width="500" height="500" loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

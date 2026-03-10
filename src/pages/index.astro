@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const slides = [1, 2, 3, 4, 5, 6, 7, 8];
+---
+
+<BaseLayout
+  title="Hundhus1 i Täby – Hunddagis i Täby Kyrkby"
+  description="Hundhus1 är ett hunddagis i Täby Kyrkby med långa promenader, kurser och en trygg hundgrupp. Välkommen att anmäla ditt intresse!"
+  canonicalPath=""
+>
+  <section class="hero">
+    <div class="hero-slides" id="heroSlides">
+      {slides.map((n, i) => (
+        <div class={`hero-slide ${i === 0 ? 'active' : ''}`}>
+          <img src={`/images/slideshow/slide${n}.jpg`} alt={`Hundhus1 hunddagis bild ${n}`} loading={i === 0 ? 'eager' : 'lazy'} />
+        </div>
+      ))}
+    </div>
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <h1>Välkommen till Hundhus1 i Täby</h1>
+        <p>Ett hunddagis i Täby Kyrkby</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Hunddagis med hjärta</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-body">
+            <h3>Långa promenader</h3>
+            <p>Hundarna får två promenader per dag. En på 1,5–2 timmar och en på 30–60 minuter. Vi är flexibla och ser till varje hunds dagsform.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Trygg hundgrupp</h3>
+            <p>Vi lägger stor vikt på balansen i hundgruppen. Det måste vara lugnt och ingen stress eller aggression får förekomma.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Mysiga stallboxar</h3>
+            <p>På dagiset har vi stora stallboxar där hundarna är tillsammans och myser. En trygg och hemtrevlig miljö.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Kurser</h2>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">Vi erbjuder hundkurser i Täby – allt från valpkurs till apportering och nosework.</p>
+      <div style="text-align: center;">
+        <a href="/kurser" class="btn">Se alla kurser</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-title">Kontakta oss</h2>
+      <p style="max-width: 600px; margin: 0 auto 1.5rem;">
+        Katarina Matisic-Lundqvist &amp; Marie Lind önskar er välkomna! Anmäl ert dagisintresse eller kursintresse via vårt kontaktformulär.
+      </p>
+      <a href="/kontakt" class="btn">Kontakta oss</a>
+    </div>
+  </section>
+
+  <script>
+    const slides = document.querySelectorAll('.hero-slide');
+    let current = 0;
+    setInterval(() => {
+      slides[current]?.classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current]?.classList.add('active');
+    }, 4000);
+  </script>
+</BaseLayout>
