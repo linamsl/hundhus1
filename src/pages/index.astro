@@ -9,6 +9,39 @@ const slides = [1, 2, 3, 4, 5, 6, 7, 8];
   description="Hundhus1 är ett hunddagis i Täby Kyrkby med långa promenader, kurser och en trygg hundgrupp. Välkommen att anmäla ditt intresse!"
   canonicalPath=""
 >
+  <!-- FAQ Structured Data for rich results in Google -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vad kostar hunddagis på Hundhus1?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hunddagis på Hundhus1 kostar 3000 kr/månad för 2 dagar i veckan, 3300 kr/månad för 3 dagar och 3800 kr/månad för heltid (5 dagar). Särskild taxa gäller för valpar, unghundar under 2 år och hundar över 55 cm." }
+      },
+      {
+        "@type": "Question",
+        "name": "Vilka öppettider har Hundhus1 hunddagis?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hundhus1 är öppet måndag–torsdag 07:00–18:00 och fredag 07:00–17:30. Stängt lördag och söndag. Semesterstängt vecka 28–31 samt 7 dagar över jul/nyår." }
+      },
+      {
+        "@type": "Question",
+        "name": "Var ligger Hundhus1 hunddagis?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hundhus1 ligger på Holmgårdsvägen 5, 187 74 Täby Kyrkby, strax norr om Stockholm." }
+      },
+      {
+        "@type": "Question",
+        "name": "Erbjuder Hundhus1 hundkurser?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, Hundhus1 erbjuder ett brett utbud av hundkurser i Täby: valpkurs, lydnadskurs, nose work, apportering, klickerkurs, spår och sök, barn med hund, promenadkurs och privatträning." }
+      },
+      {
+        "@type": "Question",
+        "name": "Hur anmäler jag min hund till Hundhus1?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Kontakta Hundhus1 via kontaktformuläret på hemsidan, ring 070-777 42 48 eller maila info@hundhus1.se. Vi svarar så snart vi kan." }
+      }
+    ]
+  })} />
+
   <!-- Hero with slideshow -->
   <section class="hero">
     <div class="hero-slides" id="heroSlides">

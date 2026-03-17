@@ -66,10 +66,28 @@ const courses = [
 ---
 
 <BaseLayout
-  title="Hundkurser i Täby – Hundhus1"
-  description="Hundkurser i Täby: valpkurs, lydnadskurs, nose work, apportering, klickerkurs och mer. Anmäl ditt intresse till Hundhus1."
+  title="Hundkurser i Täby – Valpkurs, lydnad, nose work & apportering"
+  description="Hundkurser i Täby för alla nivåer: valpkurs, lydnadskurs, nose work, apportering, klickerkurs, privatträning och mer. Anmäl intresse till Hundhus1."
   canonicalPath="/kurser"
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Hundkurser på Hundhus1 i Täby",
+    "description": "Hundkurser i Täby för alla nivåer och raser.",
+    "provider": { "@type": "LocalBusiness", "name": "Hundhus1 i Täby", "url": "https://www.hundhus1.se" },
+    "itemListElement": courses.map((c, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Course",
+        "name": c.title,
+        "description": c.description,
+        "provider": { "@type": "Organization", "name": "Hundhus1 i Täby", "url": "https://www.hundhus1.se" }
+      }
+    }))
+  })} />
+
   <section class="section" style="margin-top: var(--header-height);">
     <div class="container">
       <div class="section-header fade-up">
