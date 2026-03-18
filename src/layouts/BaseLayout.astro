@@ -87,18 +87,19 @@ const canonicalUrl = `https://www.hundhus1.se${canonicalPath}`;
       <button class="nav-toggle" aria-label="Öppna meny" id="navToggle">
         <span></span><span></span><span></span>
       </button>
-      <nav class="main-nav" id="mainNav" style="background-color:#fdf8f0;">
-        <ul>
-          <li><a href="/" class={Astro.url.pathname === '/' ? 'active' : ''}>Hem</a></li>
-          <li><a href="/om-oss" class={Astro.url.pathname === '/om-oss/' ? 'active' : ''}>Om oss</a></li>
-          <li><a href="/priser" class={Astro.url.pathname === '/priser/' ? 'active' : ''}>Priser</a></li>
-          <li><a href="/kurser" class={Astro.url.pathname === '/kurser/' ? 'active' : ''}>Kurser</a></li>
-          <li><a href="/dagisbilder" class={Astro.url.pathname === '/dagisbilder/' ? 'active' : ''}>Dagisbilder</a></li>
-          <li><a href="/kontakt" class="header-cta">Kontakt</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
+
+  <nav class="main-nav" id="mainNav" style="background-color:#fdf8f0;">
+    <ul>
+      <li><a href="/" class={Astro.url.pathname === '/' ? 'active' : ''}>Hem</a></li>
+      <li><a href="/om-oss" class={Astro.url.pathname === '/om-oss/' ? 'active' : ''}>Om oss</a></li>
+      <li><a href="/priser" class={Astro.url.pathname === '/priser/' ? 'active' : ''}>Priser</a></li>
+      <li><a href="/kurser" class={Astro.url.pathname === '/kurser/' ? 'active' : ''}>Kurser</a></li>
+      <li><a href="/dagisbilder" class={Astro.url.pathname === '/dagisbilder/' ? 'active' : ''}>Dagisbilder</a></li>
+      <li><a href="/kontakt" class="header-cta">Kontakt</a></li>
+    </ul>
+  </nav>
 
   <main>
     <slot />
