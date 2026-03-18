@@ -1067,19 +1067,21 @@ p { text-wrap: pretty; }
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgb(253, 248, 240);
+    background-color: #fdf8f0;
+    visibility: hidden;
     transform: translateX(100%);
-    opacity: 0;
     pointer-events: none;
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s;
     z-index: 9999;
     padding: 1.5rem;
     padding-top: calc(var(--header-height) + 1.5rem);
+    -webkit-transform: translateX(100%);
   }
 
   .main-nav.open {
+    visibility: visible;
     transform: translateX(0);
-    opacity: 1;
+    -webkit-transform: translateX(0);
     pointer-events: auto;
   }
 
