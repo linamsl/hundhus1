@@ -1063,7 +1063,7 @@ p { text-wrap: pretty; }
 
   .main-nav {
     position: fixed;
-    top: var(--header-height);
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -1074,6 +1074,7 @@ p { text-wrap: pretty; }
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s;
     z-index: 9999;
     padding: 1.5rem;
+    padding-top: calc(var(--header-height) + 1.5rem);
   }
 
   .main-nav.open {
