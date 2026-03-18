@@ -171,6 +171,17 @@ p { text-wrap: pretty; }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg); top: 21px; }
 
+.main-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  padding-right: 1.5rem;
+}
+
 .main-nav ul {
   display: flex;
   list-style: none;
