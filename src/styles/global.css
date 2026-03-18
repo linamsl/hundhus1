@@ -1062,26 +1062,25 @@ p { text-wrap: pretty; }
   .nav-toggle { display: flex; align-items: center; justify-content: center; }
 
   .main-nav {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #fdf8f0;
-    visibility: hidden;
-    transform: translateX(100%);
-    pointer-events: none;
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s;
+    width: 100%;
+    height: 100%;
+    background-color: #fdf8f0 !important;
     z-index: 9999;
     padding: 1.5rem;
     padding-top: calc(var(--header-height) + 1.5rem);
-    -webkit-transform: translateX(100%);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .main-nav.open {
-    visibility: visible;
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
+    display: flex;
+    flex-direction: column;
     pointer-events: auto;
   }
 
